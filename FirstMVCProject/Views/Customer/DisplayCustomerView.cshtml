@@ -1,0 +1,22 @@
+﻿@model FirstMVCProject.Models.Customer
+
+<body>
+    <div>
+        The customer id is @Model.Id <br />
+
+        The customer Code is @Model.CustomerCode <br />
+
+        @{if (Model.Amount > 10)
+            {
+
+                 <p> This is a priveleged customer </p>
+            }
+            else
+            {
+                <p> This is a normal customer </p>
+                }
+            }
+
+    </div>
+
+</body>

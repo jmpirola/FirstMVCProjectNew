@@ -1,0 +1,16 @@
+﻿@model FirstMVCProject.Models.Customer
+
+@{
+    ViewBag.Title = "FillCustomerView";
+}
+
+<h2>FillCustomerView</h2>
+
+
+@using (Html.BeginForm("DisplayCustomer", "Customer", FormMethod.Post))
+{
+    <text>Enter Customer ID</text> @Html.TextBox("Id",Model) <br />
+    <text>Enter Customer Code</text> @Html.TextBox("CustomerCode", Model) <br />
+    <text>Enter Customer Amount</text> @Html.TextBox("Amount", Model) <br />
+    <input type="submit" value="Submit customer data" />
+}   
