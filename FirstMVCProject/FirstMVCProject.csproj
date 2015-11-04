@@ -124,6 +124,7 @@
     <Compile Include="Controllers\DisplayTimeController.cs" />
     <Compile Include="Controllers\FirstMVCController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,8 +168,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\FirstMVC\HelloView.cshtml" />
     <Content Include="Views\DisplayTime\DisplayTimeView.cshtml" />
-    <Content Include="Views\Customer\DisplayCustomerView.cshtml" />
+    <Content Include="Views\Customer\DisplayCustomer.cshtml" />
     <Content Include="Views\Customer\FillCustomerView.cshtml" />
+    <Content Include="Views\Site\About.cshtml" />
+    <Content Include="Views\Site\Product.cshtml" />
+    <Content Include="Views\Site\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

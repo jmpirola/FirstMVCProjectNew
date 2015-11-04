@@ -18,6 +18,17 @@ namespace FirstMVCProject
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    "View", // Route name
+            //    "View/ViewCustomer/{id}", // URL with parameters
+            //    new {
+            //        controller = "Customer",
+            //        action = "DisplayCustomer",
+            //        id = 0
+            //    }, 
+            //    new { id = @"\d{1,2}" }
+            //    ); // Parameter defaults
         }
     }
 }

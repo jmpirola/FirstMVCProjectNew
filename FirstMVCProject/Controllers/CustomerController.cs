@@ -9,26 +9,32 @@ namespace FirstMVCProject.Controllers
 {
     public class CustomerController : Controller
     {
-        // GET: Customer
-        public ActionResult Index()
+        List<Customer> Customers = new List<Customer>();
+        //
+        // GET: /Customer/
+        public CustomerController()
         {
-            return View();
-        }
-        public ViewResult DisplayCustomer(Customer objCustomer )
-        {
-            /*
-                        Customer objCustomer = new Customer();
+            Customer obj1 = new Customer();
+            obj1.Id = 12;
+            obj1.CustomerCode = "1001";
+            obj1.Amount = 90.34;
 
-                       objCustomer.Id = Convert.ToInt16(Request.Form["Id"].ToString());
-                       objCustomer.CustomerCode = Request.Form["CustomerCode"].ToString();
-                       objCustomer.Amount = Convert.ToDouble(Request.Form["Amount"].ToString()); ;
-            */
-            return View("DisplayCustomerView", objCustomer);
+            Customers.Add(obj1);
+
+            obj1 = new Customer();
+            obj1.Id = 11;
+            obj1.CustomerCode = "1002";
+            obj1.Amount = 91;
+            Customers.Add(obj1);
+
         }
 
-        public ViewResult FillCustomer()
+        [HttpGet]
+        public ViewResult DisplayCustomer(int id)
         {
-            return View("FillCustomerView");
+            Customer objCustomer = Customers[id];
+
+            return View("DisplayCustomer", objCustomer);
         }
     }
 }
