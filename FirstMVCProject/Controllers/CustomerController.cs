@@ -36,5 +36,27 @@ namespace FirstMVCProject.Controllers
 
             return View("DisplayCustomer", objCustomer);
         }
+
+        [HttpGet]
+        public ViewResult FillCustomer()
+        {
+            
+
+            return View("FillCustomerView");
+        }
+
+        [HttpPost]
+        public ActionResult PostCustomer(Customer obj)
+        {
+            if (ModelState.IsValid)
+            {
+                //obj.Save();
+                return View("ThanksView");
+            }
+            else
+            {
+                return View("FillCustomerView");
+            }
+        }
     }
 }

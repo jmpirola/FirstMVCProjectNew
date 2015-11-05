@@ -4,13 +4,20 @@
     ViewBag.Title = "FillCustomerView";
 }
 
+<head runat="server">
+    <script src="@Url.Content(" ~/Scripts/MicrosoftAjax.debug.js")" type="text/javascript"></script>
+    <script src="@Url.Content(" ~/Scripts/MicrosoftMvcAjax.debug.js")" type="text/javascript"></script>
+    <script src="@Url.Content(" ~/Scripts/MicrosoftMvcValidation.debug.js")" type="text/javascript"></script>
+    @{ Html.EnableClientValidation();}
+</head>
+
 <h2>FillCustomerView</h2>
 
 
-@using (Html.BeginForm("DisplayCustomer", "Customer", FormMethod.Post))
+@using (Html.BeginForm("PostCustomer", "Customer", FormMethod.Post))
 {
-    <text>Enter Customer ID</text> @Html.TextBox("Id",Model) <br />
-    <text>Enter Customer Code</text> @Html.TextBox("CustomerCode", Model) <br />
-    <text>Enter Customer Amount</text> @Html.TextBox("Amount", Model) <br />
-    <input type="submit" value="Submit customer data" />
-}   
+@Html.EditorForModel()
+<input type="submit" value="Submit customer data" />
+}
+
+@Html.ValidationSummary()
